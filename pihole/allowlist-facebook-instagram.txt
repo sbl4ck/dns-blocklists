@@ -1,0 +1,47 @@
+! Title: Allowlist - Facebook comments, Facebook/Instagram video, Instagram DMs (Pi-hole v6)
+! Description: Unblocks the Meta domains needed for Facebook comments (including the embedded comments plugin on other sites), Facebook/Instagram video playback and Instagram/Messenger direct messages. Tracking/ad hosts (ads., pixel., analytics., an., ep*. facebook.com, l.facebook.com) are deliberately NOT allowed.
+! Syntax: AdBlock
+! Usage: add in Pi-hole as an ALLOWLIST (Lists -> Add allowlist), then Tools -> Update Gravity.
+!
+! --- CDNs (media, video, images, scripts); wildcard because hostnames are dynamic ---
+@@||fbcdn.net^
+@@||cdninstagram.com^
+@@||fbsbx.com^
+!
+! --- Facebook web / comments / video ---
+facebook.com
+@@||www.facebook.com^
+@@||web.facebook.com^
+@@||m.facebook.com^
+@@||mbasic.facebook.com^
+@@||business.facebook.com^
+@@||staticxx.facebook.com^
+@@||upload.facebook.com^
+@@||video.facebook.com^
+@@||graph.facebook.com^
+@@||b-graph.facebook.com^
+@@||connect.facebook.net^
+@@||static.xx.fbcdn.net^
+@@||fb.watch^
+@@||fb.me^
+@@||fb.com^
+!
+! --- Messenger / Instagram DMs: realtime chat + push (websocket / MQTT) ---
+@@||edge-chat.facebook.com^
+@@||edge-mqtt.facebook.com^
+@@||mqtt-mini.facebook.com^
+@@||gateway.facebook.com^
+@@||edge-chat.instagram.com^
+@@||gateway.instagram.com^
+@@||mqtt.instagram.com^
+@@||messenger.com^
+@@||www.messenger.com^
+!
+! --- Instagram web/app (feed, DMs, video, login) ---
+@@||instagram.com^
+@@||www.instagram.com^
+@@||i.instagram.com^
+@@||b.i.instagram.com^
+@@||graph.instagram.com^
+@@||z-p4.www.instagram.com^
+@@||help.instagram.com^
